@@ -1,6 +1,7 @@
 #!/bin/sh
 
-pwd
+cat ~/.ssh/id_rsa.pub
+ls ~/
 echo "---"
 if ! ssh-keygen -H -F 10.10.0.207 >/dev/null 2>&1
   then
