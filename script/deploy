@@ -1,14 +1,4 @@
 #!/bin/sh
-
-cat ~/.ssh/id_rsa.pub
-ls ~/
-echo "---"
-if ! ssh-keygen -H -F 10.10.0.207 >/dev/null 2>&1
-  then
-    echo "Host key for 10.10.0.207 not found, adding it to known_hosts ..."
-    ssh-keyscan -H 10.10.0.207 >> "${HOME}/.ssh/known_hosts" 2> /dev/null
-fi
- 
 ssh webapp@10.10.0.207 <<EOF
   cd ~/hello-jenkins
   git pull
